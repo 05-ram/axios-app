@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Button, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -14,6 +15,13 @@ const Home = () => {
     <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
       <h3>List Of Users</h3>
       <div className="w-75 rounded bg-white border shadow p-4">
+        <div className="d-flex justify-content-end">
+          <Link to='/create'>
+            <Button variant='success'>
+              Add +
+            </Button>
+          </Link>
+        </div>
         <Table striped>
           <thead>
             <tr>
