@@ -42,7 +42,9 @@ const Home = () => {
                   <td>{d.mobile}</td>
                   <td>
                     <div className="d-flex gap-2 align-items-center">
-                      <Button size='sm' variant='info'>Read</Button>
+                      <Link to={`/read/${d.id}`}>
+                        <Button size='sm' variant='info'>Read</Button>
+                      </Link>
                       <Button size='sm'>Edit</Button>
                       <Button variant='danger' size='sm'>Delete</Button>
                     </div>
