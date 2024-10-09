@@ -41,7 +41,7 @@ const Home = () => {
                   <td>{d.email}</td>
                   <td>{d.mobile}</td>
                   <td>
-                    <div className="d-flex gap-2 align-items-center justify-content-center">
+                    <div className="d-flex gap-2 align-items-center">
                       <Button size='sm' variant='info'>Read</Button>
                       <Button size='sm'>Edit</Button>
                       <Button variant='danger' size='sm'>Delete</Button>
