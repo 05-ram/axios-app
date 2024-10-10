@@ -11,6 +11,14 @@ const Home = () => {
       .then(res => setData(res.data))
       .catch(err => console.log(err))
   }, [])
+  const handleDelete = (id) => {
+    const confirm = window.confirm('Are u sure u want to delete?')
+    if (confirm) {
+      axios.delete('http://localhost:5000/users/' + id)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err));
+    }
+  }
   return (
     <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
       <h3>List Of Users</h3>
@@ -45,8 +53,10 @@ const Home = () => {
                       <Link to={`/read/${d.id}`}>
                         <Button size='sm' variant='info'>Read</Button>
                       </Link>
-                      <Button size='sm'>Edit</Button>
-                      <Button variant='danger' size='sm'>Delete</Button>
+                      <Link to={`/update/${d.id}`}>
+                        <Button size='sm'>Edit</Button>
+                      </Link>
+                      <Button variant='danger' size='sm' onClick={e => handleDelete(d.id)}>Delete</Button>
                     </div>
                   </td>
                 </tr>
